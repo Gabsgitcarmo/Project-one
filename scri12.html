@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<HTML>
+    <head> 
+        <title>calculadora</title>  
+        <meta charset="utf-8">
+        <style> 
+            .center {
+                text-align: center;
+                width: fit-content;    
+                border: 7px solid black;
+                padding: 10px;
+            }
+            td:active { 
+                transform: scale(0.95);
+                transition: transform 0.1s; 
+            }
+            button {
+                width: 50px;
+                height: 50px;
+            }
+            #result {
+                width: 200px;
+                height: 50px;
+                margin-bottom: 15px;
+                text-align: right;
+                font-size: 20px;
+                border: 7px solid rgb(13, 13, 14);
+                padding: 5px;
+            }
+             #principal {background: gray;}
+             
+             .negrito { font-weight : bold;
+            
+            }
+
+        </style>
+    </head>
+    <body id ="principal">  
+        <div class="center" style="margin: auto; text-align: center;"> 
+            <input type="text" id="result" readonly> 
+            <table border="7" width="200">
+                <tr>
+                    <td onclick="appendValue('+')">+</td>
+                    <td onclick="appendValue('-')">-</td>
+                    <td onclick="appendValue('*')">*</td> 
+                    <td onclick="appendValue('/')">/</td>                                   
+                </tr>
+            </table>
+            <table border="7" width="200">
+                <tr>
+                    <td onclick="appendValue('1')">1</td>
+                    <td onclick="appendValue('2')">2</td>
+                    <td onclick="appendValue('3')">3</td>                                    
+                </tr>
+            </table>
+            <table border="7" width="200">
+                <tr>
+                    <td onclick="appendValue('4')">4</td>
+                    <td onclick="appendValue('5')">5</td>
+                    <td onclick="appendValue('6')">6</td>                                    
+                </tr>
+            </table>
+            <table border="7" width="200">
+                <tr>
+                    <td onclick="appendValue('7')">7</td>
+                    <td onclick="appendValue('8')">8</td>
+                    <td onclick="appendValue('9')">9</td>           
+                    <td onclick="appendValue('0')">0</td>
+                </tr>
+            </table>
+            <table border="7" width="200">
+                <tr>
+                    <td onclick="turnOn()"translate="no">ON</td>
+                    <td onclick="clearResult()" translate="no">L</td>
+                    <td onclick="calculateResult()">=</td> 
+                    
+                    
+                </tr>
+            </table>
+            <table border="7" width="200">
+                <tr>
+                    <td onclick="turnOff()"translate="no">OFF</td>
+                    
+                </tr>
+            </table>
+            
+    </div>
+        <div style= "color: black; background-color: white; padding: 15px; border: solid black 7px;  margin-top: 20px;">
+          <p> <h1>INSTRUÇÕES / INSTRUCTIONS </h1> </p>
+          <hr style ="color: solid black;  border: solid black; "> 
+          <text class= "negrito" > ON = inicia a caculadora </text> <p>
+          <text class= "negrito">L =  Limpa, o visor da caculadora para novas contas </text> <p>
+          <text class= "negrito">OFF = exibe a mensagem de , "OFF" no visor e desliga a calculadora </text> <p>
+          <text class= "negrito">LEMBRENTE : ao entrar na pagina , clique em On para iniciar a cacluladora </text><p>
+        
+    <p></p>
+            <text class= "negrito" > ON = starts the calculator </text> <p>
+                <text  class= "negrito"> L = Clears the calculator display for new calculations  </text> <p>
+                <text  class= "negrito" >OFF = displays the message "OFF" on the display and turns off the calculator </text> <p>
+                <text class= "negrito" > REMINDER  : when you enter the page, click On to start the calculator </text><p>
+                <text class= "negrito">@gabscarmo</text> 
+
+    </div> 
+
+
+
+        <script>
+            let resultField = document.getElementById('result');
+            let calculatorEnabled = false; 
+            function appendValue(value) {
+                if (calculatorEnabled) {
+                    resultField.value += value; 
+                }
+            }
+
+            function clearResult() {
+                if (calculatorEnabled) {
+                    resultField.value = ''; 
+                }
+            }
+
+            function calculateResult() {
+                if (calculatorEnabled) {
+                    try {
+                        resultField.value = eval(resultField.value); 
+                    } catch (e) {
+                        resultField.value = 'Erro'; 
+                    }
+                }
+            }
+
+            function turnOn() {
+                calculatorEnabled = true; 
+                resultField.value = ''; 
+            }
+
+            function turnOff() {
+                calculatorEnabled = false; 
+                resultField.value = 'OFF'; 
+            }
+        </script>
+        <script>
+            alert(" OLá bem vindo ao meu projeto antes de tudo , muito obrigado por ter chegado até aqui para ver a funcionalidade dele . divirta-se faça contas e testes com a calculadora avontade , abraço @gabscarmo")
+        </script>
+    </body>
+</HTML>
+
+
