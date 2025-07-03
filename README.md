@@ -1,1 +1,1 @@
-                                                                        PROJECT FOR CALCULATOR ![Captura de tela 2025-07-03 090453](https://github.com/user-attachments/assets/bdab4f67-8b4d-4444-b74a-ee3b9f775431)
+                                                                        PROJECT FOR CALCULATOR 
